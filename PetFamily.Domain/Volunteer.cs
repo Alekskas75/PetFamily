@@ -9,7 +9,7 @@ namespace PetFamily.Domain
     public class Volunteer
     {
         public Volunteer() { }
-        public int Id { get; set; }
+        public int Guid { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int ExperienceInYears { get; set; }
@@ -17,8 +17,8 @@ namespace PetFamily.Domain
         public int NoHome { get; set; }
         public int BeingTreated { get; set; }  //На лечении
         public string TelephoneNumber { get; set; }
-        public string SocialNetworks { get; set; }
-        public string DetailsForHelp { get; set; }
+        public List<SocialNetwork> SocialNetworks { get; set; }
+        public List<HelpDetails> DetailsForHelp { get; set; }
         public List<Pet> ListOfPets { get; set; }
     }
 

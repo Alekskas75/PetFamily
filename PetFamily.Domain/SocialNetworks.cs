@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace PetFamily.Domain
 {
-    public class PetPhoto
-    {
+    public class SocialNetwork
+    {           
+        public SocialNetwork() { }            
         public Guid Id { get; set; }
-        public string Path { get; set; }
-        public bool MainPhoto { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+       
     }
 }
