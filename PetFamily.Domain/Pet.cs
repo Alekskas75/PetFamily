@@ -20,6 +20,7 @@
         public string Status { get; set; }  //Статус помощи - Нуждается в помощи/Ищет дом/Нашел дом
         public string HelpDetails { get; set; }  //Реквизиты для помощи (у каждого реквизита будет название и описание, как сделать перевод), поэтому нужно сделать отдельный класс для реквизита
         public DateTime CreationDate { get; set; }
+        public List<PetPhoto> PetPhotos { get; set; }
     }
 
 }
