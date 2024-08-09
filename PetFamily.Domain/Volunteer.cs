@@ -18,8 +18,9 @@ namespace PetFamily.Domain
         public int BeingTreated { get; set; }  //На лечении
         public string TelephoneNumber { get; set; }
         public List<SocialNetwork> SocialNetworks { get; set; }
-        public List<HelpDetails> DetailsForHelp { get; set; }
-        public List<Pet> ListOfPets { get; set; }
+
+        public List<Requisites> Requisites;
+        public List<Pet> Pets { get; set; }
     }
 
 }

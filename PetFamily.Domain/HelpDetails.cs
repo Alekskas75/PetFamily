@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace PetFamily.Domain
 {
-    public class HelpDetails
+    public class Requisites
     {  
-        public HelpDetails() { }
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Target { get; set; }
-        public string Check { get; set; }
-        public string CardNumber { get; set; }
+        public Requisites() { }
+        public Guid Id { get; private set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public string Target { get; private set; }
+        public string Check { get; private set; }
+        public string CardNumber { get; private set; }
         
     }
 }
