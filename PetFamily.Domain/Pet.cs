@@ -18,7 +18,7 @@
         public bool IsVaccinated { get; private set; }  //Вакцинирован? исправил5
         public enum Status { NeedsHelp, LookingHome, FoundHome }  //Статус помощи - Нуждается в помощи/Ищет дом/Нашел дом
         //исправил6
-        public List<Requisites> Requisites;  //Реквизиты для помощи (у каждого реквизита будет название и описание, как сделать перевод), поэтому нужно сделать отдельный класс для реквизита
+        public List<Requisites> Requisites { get; private set; };  //Реквизиты для помощи (у каждого реквизита будет название и описание, как сделать перевод), поэтому нужно сделать отдельный класс для реквизита
         public DateTime CreationDate { get; private set; }
     }
 }
