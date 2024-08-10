@@ -19,8 +19,8 @@ namespace PetFamily.Domain
         public string TelephoneNumber { get; set; }
         public List<SocialNetwork> SocialNetworks { get; set; }
 
-        public List<Requisites> Requisites;
-        public List<Pet> Pets { get; set; }
+        public List<Requisites> Requisites;  //исправил8
+        public List<Pet> Pets { get; set; } //исправил9
     }
 
 }
