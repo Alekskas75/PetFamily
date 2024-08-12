@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetFamily.Domain
+namespace PetFamily.Domain.Models
 {
     public class Requisites
-    {  
+    {
         public Requisites() { }
-        public Guid Id { get; private set; } 
+        public Guid Id { get; private set; }
         public string Name { get; private set; } = default!;
         public string Description { get; private set; } = default!;
         public string Target { get; private set; } = default!;

@@ -1,4 +1,4 @@
-﻿namespace PetFamily.Domain
+﻿namespace PetFamily.Domain.Models
 {
     public class Pet
     {
@@ -13,11 +13,11 @@
         public string Address { get; private set; } = default!;
         public decimal Weight { get; private set; }
         public string PhoneNumber { get; private set; } = default!;
-        public bool IsNeutered { get; private set; }    // Кастрирован?
+        public bool IsNeutered { get; private set; } 
         public DateTime DateOfBirth { get; private set; }
-        public bool IsVaccinated { get; private set; }  //Вакцинирован? 
-        public enum Status { NeedsHelp, LookingHome, FoundHome }
-        public List<Requisites> Requisites { get; private set; } = []; 
+        public bool IsVaccinated { get; private set; }  
+        public enum Status;
+        public List<Requisites> Requisites { get; private set; } = [];
         public DateTime CreationDate { get; private set; }
     }
 }

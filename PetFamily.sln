@@ -4,14 +4,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{86A7E1CA-AA5E-43CC-8905-3E3D43C28DD8}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetFamily.Api", "PetFamily.Api\PetFamily.Api.csproj", "{4E502851-5A74-432A-B678-2F3C923A4B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetFamily.Api", "PetFamily.Api\PetFamily.Api.csproj", "{4E502851-5A74-432A-B678-2F3C923A4B87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetFamily.Application", "PetFamily.Application\PetFamily.Application.csproj", "{4DA19F71-551C-420B-B264-AD37A0F4EB3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetFamily.Application", "PetFamily.Application\PetFamily.Application.csproj", "{4DA19F71-551C-420B-B264-AD37A0F4EB3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetFamily.Domain", "PetFamily.Domain\PetFamily.Domain.csproj", "{110ED9F2-C3E7-4A1B-996C-F7F2440029F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetFamily.Domain", "PetFamily.Domain\PetFamily.Domain.csproj", "{110ED9F2-C3E7-4A1B-996C-F7F2440029F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetFamily.Infrastructure", "PetFamily.Infrastructure\PetFamily.Infrastructure.csproj", "{3DADD9C4-3ACB-4C22-8D76-065873E3DD70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetFamily.Infrastructure", "PetFamily.Infrastructure\PetFamily.Infrastructure.csproj", "{3DADD9C4-3ACB-4C22-8D76-065873E3DD70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{44A3E519-ACE3-4187-B367-61B52B1E1019}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +45,11 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{4E502851-5A74-432A-B678-2F3C923A4B87} = {86A7E1CA-AA5E-43CC-8905-3E3D43C28DD8}
-		{4DA19F71-551C-420B-B264-AD37A0F4EB3B} = {86A7E1CA-AA5E-43CC-8905-3E3D43C28DD8}
-		{110ED9F2-C3E7-4A1B-996C-F7F2440029F0} = {86A7E1CA-AA5E-43CC-8905-3E3D43C28DD8}
-		{3DADD9C4-3ACB-4C22-8D76-065873E3DD70} = {86A7E1CA-AA5E-43CC-8905-3E3D43C28DD8}
+		{4E502851-5A74-432A-B678-2F3C923A4B87} = {44A3E519-ACE3-4187-B367-61B52B1E1019}
+		{4DA19F71-551C-420B-B264-AD37A0F4EB3B} = {44A3E519-ACE3-4187-B367-61B52B1E1019}
+		{110ED9F2-C3E7-4A1B-996C-F7F2440029F0} = {44A3E519-ACE3-4187-B367-61B52B1E1019}
+		{3DADD9C4-3ACB-4C22-8D76-065873E3DD70} = {44A3E519-ACE3-4187-B367-61B52B1E1019}
+		{44A3E519-ACE3-4187-B367-61B52B1E1019} = {86A7E1CA-AA5E-43CC-8905-3E3D43C28DD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79E45E1E-728C-4626-AE3A-1863B8215CD2}
