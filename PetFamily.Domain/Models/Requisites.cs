@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace PetFamily.Domain.Models
 {
-    public class Requisites
+    public record Requisites
     {
-        public Requisites() { }
-        public Guid Id { get; private set; }
-        public string Name { get; private set; } = default!;
-        public string Description { get; private set; } = default!;
-        public string Target { get; private set; } = default!;
-        public string Check { get; private set; } = default!;
-        public string CardNumber { get; private set; } = default!;
+        public Requisites(string name, string description, string target, string check, string cardNumber)
+        {
+            Name = name;
+            Description = description;
+            Target = target;
+            Check = check;
+            CardNumber = cardNumber;
+        }
+
+        public string Name { get; }
+        public string Description { get; }
+        public string Target { get; }
+        public string Check { get; }
+        public string CardNumber { get; }
+
 
     }
 }
