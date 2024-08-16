@@ -10,7 +10,6 @@ namespace PetFamily.Domain.Models
 {
     public record Address
     {
-        private Address() { }
         private Address(string city, string district, int houseNumber, int flatNumber)
         {
             City = city;
@@ -26,7 +25,7 @@ namespace PetFamily.Domain.Models
 
         public static Result<Address> Create(string city, string district, int houseNumber, int flatNumber)
         {
-           
+            //if(city)
 
             var address = new Address(city, district, houseNumber, flatNumber);
 
