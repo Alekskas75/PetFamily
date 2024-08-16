@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace PetFamily.Domain.Shared
 {
     public class Result
@@ -44,6 +46,7 @@ namespace PetFamily.Domain.Shared
             _value :
             throw new InvalidOperationException("Ошибка в Result<TValue>");
         public static Result<TValue> Success(TValue value) => new Result<TValue>(value, true, null);
+        public static Result<TValue> Failure(string error) => new Result<TValue>(default!, false, error);
 
     }
 }
