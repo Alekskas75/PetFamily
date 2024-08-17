@@ -8,6 +8,10 @@ namespace PetFamily.Domain.Models
 {
     public record Requisites
     {
+        public Requisites()
+        {
+        }
+
         public Requisites(string name, string description, string target, string check, string cardNumber)
         {
             Name = name;

@@ -8,6 +8,8 @@ namespace PetFamily.Domain.Models
 {
     public class PetPhoto
     {
+        public PetPhoto() {}
+
         public Guid Id { get; private set; }
         public string Path { get; private set; } = default!;
         public bool IsMainPhoto { get; private set; }
