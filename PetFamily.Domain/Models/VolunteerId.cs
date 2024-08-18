@@ -4,7 +4,7 @@
     {
         public VolunteerId(Guid value)
         {
-            this.Value = value;
+           Value = value;
         }
         public Guid Value { get; }
         public static VolunteerId NewVolunteerId() => new(Guid.NewGuid());

@@ -1,8 +1,14 @@
-﻿namespace PetFamily.Domain.Models
+﻿using PetFamily.Domain.Shared;
+
+using System.Security.Cryptography;
+
+namespace PetFamily.Domain.Models
 {
-    public class Pet
+    public class Pet : Entity<PetId>
     {
-        private Pet() { }
+        private Pet(PetId id):base(id)
+        { 
+        }
         public PetId Id { get; private set; }
         public string Name { get; private set; } = default!;
         public string Species { get; private set; } = default!;
