@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,13 +26,16 @@ namespace PetFamily.Domain.Models
 
         public static Result<Address> Create(string city, string district, int houseNumber, int flatNumber)
         {
-            //if(city)
-
+            //if (string.IsNullOrWhiteSpace(city))
+            //{
             var address = new Address(city, district, houseNumber, flatNumber);
-
             return Result.Success(address);
+
+            //}
+
+
         }
 
-       
+
     }
 }
