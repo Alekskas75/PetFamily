@@ -8,6 +8,10 @@ namespace PetFamily.Domain.Models
 {
     public record FullName
     {
+        public FullName()
+        {
+        }
+
         public FullName(string lastName, string firstName, string middleName)
         {
             this.LastName = lastName;

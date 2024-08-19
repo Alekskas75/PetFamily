@@ -27,7 +27,7 @@ namespace PetFamily.Domain.Models
         public static Result<PetPhoto> Create(PetPhotoId id, string path, bool isMain)
         {
             if (string.IsNullOrWhiteSpace(path) || path.Length > Constants.MAX_PATH_LENGTH)
-                return Errors.General.ValueIsRequired(nameof(path));
+                return null; ;
 
             var petPhoto = new PetPhoto(id, path, isMain);
             return Result<PetPhoto>.Success(petPhoto);
