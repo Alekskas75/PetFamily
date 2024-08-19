@@ -32,10 +32,6 @@ namespace PetFamily.Domain.Models
             return Result.Success(address);
 
             //}
-
-
         }
-
-
     }
 }
