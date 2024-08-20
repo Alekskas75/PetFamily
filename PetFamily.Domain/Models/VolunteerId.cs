@@ -2,13 +2,12 @@
 {
     public record VolunteerId
     {
-        public VolunteerId(Guid value)
-        {
-           Value = value;
-        }
-        public Guid Value { get; }
-        public static VolunteerId NewVolunteerId() => new(Guid.NewGuid());
-        public static VolunteerId Empty() => new(Guid.Empty);
-        public static VolunteerId Create(Guid id) => new(id);
+        public Guid Id { get; }
+
+        private VolunteerId(Guid id) => Id = id;
+
+        public static VolunteerId NewId() => new VolunteerId(Guid.NewGuid());
+        public static VolunteerId Empty() => new VolunteerId(Guid.Empty);
+        public static VolunteerId Create(Guid id) => new VolunteerId(id);
     }
 }

@@ -18,7 +18,7 @@ namespace PetFamily.Infrastructure.Configurations
             builder.ToTable(nameof(Pet));
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id)
-                .HasConversion(id => id.Value, Value => PetId.Create(Value));
+                .HasConversion(id => id, Value => PetId.Create(new Guid()));
         }
     }
 }

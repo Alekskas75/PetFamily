@@ -8,6 +8,7 @@ namespace PetFamily.Domain.Models
     {
         private Pet(PetId id):base(id)
         { 
+
         }
         public PetId Id { get; private set; }
         public string Name { get; private set; } = default!;
@@ -25,5 +26,19 @@ namespace PetFamily.Domain.Models
         public enum Status;
         public Requisites Requisites { get; private set; }
         public DateTime CreationDate { get; private set; }
+
+        public override bool Equals(object? obj)
+        {
+           if(obj is not Entity<PetId> other)           
+                return false;            
+           if(ReferenceEquals(this, other)) 
+                return true;
+           return Id.Equals(other.Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
     }
 }

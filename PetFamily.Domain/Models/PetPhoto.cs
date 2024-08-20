@@ -1,4 +1,6 @@
-﻿using PetFamily.Domain.Shared;
+﻿using CSharpFunctionalExtensions;
+
+using PetFamily.Domain.Shared;
 
 using System;
 using System.Collections.Generic;
@@ -8,29 +10,23 @@ using System.Threading.Tasks;
 
 namespace PetFamily.Domain.Models
 {
-    public class PetPhoto : Entity<PetPhotoId>
+    public record PetPhoto
     {
-        private PetPhoto(PetPhotoId id):base (id) { }
-        private PetPhoto(PetPhotoId id, string path, bool isMain)
-        : base(id)
+        public string Path { get; }
+        public bool IsImageMain { get; }
+
+        private PetPhoto(string path, bool isImageMain)
         {
             Path = path;
-            IsMain = isMain;
+            IsImageMain = isImageMain;
         }
 
-        public string Path { get; private set; }
-        public bool IsMain { get; private set; }
-
-        public void SetAsMain() => IsMain = true;
-        public void SetAsNotMain() => IsMain = false;
-
-        public static Result<PetPhoto> Create(PetPhotoId id, string path, bool isMain)
+        public static Result<PetPhoto, Error> Create(string path, bool isImageMain)
         {
-            if (string.IsNullOrWhiteSpace(path) || path.Length > Constants.MAX_PATH_LENGTH)
-                return null; ;
+            if (string.IsNullOrWhiteSpace(path))
+                return Errors.General.ValueIsInvalid("path cannot be empty");
 
-            var petPhoto = new PetPhoto(id, path, isMain);
-            return Result<PetPhoto>.Success(petPhoto);
+            return new PetPhoto(path, isImageMain);
         }
     }
 }
