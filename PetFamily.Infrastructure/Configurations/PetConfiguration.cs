@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-using PetFamily.Domain.Models;
-
+using PetFamily.Domain.Models.Volunteer;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetFamily.Domain.Models
+namespace PetFamily.Domain.Models.Volunteer
 {
     public class SocialNetwork
     {

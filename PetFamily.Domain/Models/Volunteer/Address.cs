@@ -1,7 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
 //using PetFamily.Domain.Shared;
 
-namespace PetFamily.Domain.Models
+namespace PetFamily.Domain.Models.Volunteer
 {
     public record Address
     {

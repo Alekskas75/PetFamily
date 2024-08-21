@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetFamily.Domain.Models
+namespace PetFamily.Domain.Models.Volunteer
 {
     public record FullName
     {
@@ -14,13 +14,13 @@ namespace PetFamily.Domain.Models
 
         public FullName(string lastName, string firstName, string middleName)
         {
-            this.LastName = lastName;
-            this.FirstName = firstName;
-            this.MiddleName = middleName;
+            LastName = lastName;
+            FirstName = firstName;
+            MiddleName = middleName;
         }
 
-        public string LastName { get; } 
-        public string FirstName { get; } 
+        public string LastName { get; }
+        public string FirstName { get; }
         public string MiddleName { get; }
     }
 }

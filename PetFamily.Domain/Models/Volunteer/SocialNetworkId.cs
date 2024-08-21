@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetFamily.Domain.Models
+namespace PetFamily.Domain.Models.Volunteer
 {
     public record SocialNetworkId
     {
         public SocialNetworkId(Guid value)
         {
-            this.Value = value;
+            Value = value;
         }
         public Guid Value { get; }
         public static SocialNetworkId NewVolunteerId() => new(Guid.NewGuid());
