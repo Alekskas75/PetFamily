@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace PetFamily.Domain.Models.Volunteer
 {
-    public class SocialNetwork
+    public record SocialNetwork
     {
-        public SocialNetwork()
+        public SocialNetwork(string social, string link)
         {
+            Social = social;
+            Link = link;
         }
 
-        public SocialNetworkId Id { get; private set; }
-        public string Name { get; private set; } = default!;
-        public string Description { get; private set; } = default!;
+       
+        public string Social { get; }
+        public string Link { get; }
 
     }
 }

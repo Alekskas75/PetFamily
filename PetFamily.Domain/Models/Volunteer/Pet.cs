@@ -1,16 +1,27 @@
 ﻿using PetFamily.Domain.Shared;
 
+using System.Xml.Linq;
+
 
 
 namespace PetFamily.Domain.Models.Volunteer
 {
     public class Pet : Entity<PetId>
     {
+       
         private Pet(PetId id) : base(id)
         {
 
         }
-        public PetId Id { get; private set; }
+        public Pet(PetId petId,string name, string description)
+                       
+                      
+          : base(petId)
+        {
+
+            Name = name;
+            Description = description;
+        }
         public string Name { get; private set; } = default!;
         public string Species { get; private set; } = default!;
         public string Description { get; private set; } = default!;

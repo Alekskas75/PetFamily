@@ -5,6 +5,10 @@ namespace PetFamily.Domain.Models.Volunteer
 {
     public record Address
     {
+        public Address()
+        {
+        }
+
         private Address(string city, string district, int houseNumber, int flatNumber)
         {
             City = city;

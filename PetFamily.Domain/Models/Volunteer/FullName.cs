@@ -12,11 +12,11 @@ namespace PetFamily.Domain.Models.Volunteer
         {
         }
 
-        public FullName(string lastName, string firstName, string middleName)
+        public FullName(string lastName, string firstName, string? middleName)
         {
             LastName = lastName;
             FirstName = firstName;
-            MiddleName = middleName;
+            MiddleName = middleName =default!;
         }
 
         public string LastName { get; }
