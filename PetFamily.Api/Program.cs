@@ -1,26 +1,35 @@
 using Microsoft.EntityFrameworkCore;
-using PetFamily.Api.Data;
+using PetFamily.Infrastructure.Data;
+using Serilog.Events;
+using Serilog;
+using PetFamily.Api;
+using PetFamily.Application;
+using PetFamily.Infrastructure;
+using PetFamily.Api.Extensions;
+using PetFamily.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.ConfigureLogging();
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services
+    .AddApi()
+    .AddApplication()
+    .AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseExceptionMiddleware();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    await app.ApplyMigration();
 }
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 
