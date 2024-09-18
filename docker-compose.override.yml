@@ -1,8 +1,8 @@
-version: '3.4'
-
 services:
   postgres:
-    image: postgres:latest
+    container_name: postgres
+    image: postgres
+    restart: always
     environment:
       POSTGRES_DB: PetFamilyDB
       POSTGRES_USER: kas
@@ -10,8 +10,27 @@ services:
     ports:
       - "5434:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
+      - postgres-data:/var/lib/postgresql/data
+  seq:
+    container_name: seq
+    image: datalust/seq:latest
+    restart: always
+    ports:
+      - "5341:5341"
+      - "8081:80"
+    environment:
+      - ACCEPT_EULA=Y
+  minio:
+    container_name: minio
+    image: minio/minio
+    restart: always
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    command: server --console-address ":9001" /data
+    
 volumes:
-  postgres_data:
-
+  postgres-data:
+  minio_data:

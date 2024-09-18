@@ -1,49 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PetFamily.Domain.Shared
+﻿namespace PetFamily.Domain.Shared
 {
-   
-        public sealed class Error
+    public record Error
+    {
+        private const string SEPARATOR = "||";
+
+        public string Code { get; }
+        public string Message { get; }
+        public ErrorType Type { get; }
+        public string? InvalidField { get; } = null;
+
+        private Error(string code, string message, ErrorType type, string? invalidField = null)
         {
-            public string Code { get; }
-            public string Message { get; }
-            public ErrorType Type { get; }
-
-            private Error(string code, string message, ErrorType type)
-            {
-                if (string.IsNullOrWhiteSpace(code))
-                    throw new InvalidOperationException();
-
-                Code = code;
-                Message = message;
-                Type = type;
-            }
-
-            public static Error Validation(string errorCode, string errorMessage) =>
-                new(errorCode, errorMessage, ErrorType.Validation);
-            public static Error NotFound(string errorCode, string errorMessage) =>
-                new(errorCode, errorMessage, ErrorType.NotFound);
-            public static Error Failure(string errorCode, string errorMessage) =>
-                new(errorCode, errorMessage, ErrorType.Failure);
-            public static Error Conflict(string errorCode, string errorMessage) =>
-                new(errorCode, errorMessage, ErrorType.Conflict);
-
-            public override string ToString()
-            {
-                return $"ErrorCode: {Code}. ErrorMessage:{Message}";
-            }
+            Code = code;
+            Message = message;
+            Type = type;
+            InvalidField = invalidField;
         }
 
-        public enum ErrorType
+        public static Error Validation(string code, string message, string? invalidField = null) =>
+            new(code, message, ErrorType.Validation, invalidField);
+
+        public static Error NotFound(string code, string message) =>
+            new(code, message, ErrorType.NotFound);
+
+        public static Error Failure(string code, string message) =>
+            new(code, message, ErrorType.Failure);
+
+        public static Error Conflict(string code, string message) =>
+            new(code, message, ErrorType.Conflict);
+
+        public string Serialize()
         {
-            Validation,
-            NotFound,
-            Failure,
-            Conflict
+            return string.Join(SEPARATOR, Code, Message, Type);
         }
+
+        public static Error Deserialize(string serialized)
+        {
+            var parts = serialized.Split(SEPARATOR);
+
+            if (parts.Length < 3)
+                throw new ArgumentException("Invalid serialized format");
+
+            if (Enum.TryParse<ErrorType>(parts[2], out var type) == false)
+                throw new ArgumentException("Invalid serialized format");
+
+            return new Error(parts[0], parts[1], type);
+        }
+
+        public ErrorList ToErrorList() => new([this]);
     }
+
+    public enum ErrorType
+    {
+        Validation,
+        NotFound,
+        Failure,
+        Conflict
+    }
+}
 
