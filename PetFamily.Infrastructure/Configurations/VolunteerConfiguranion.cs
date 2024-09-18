@@ -15,19 +15,10 @@ namespace PetFamily.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Volunteer> builder)
         {
             builder.ToTable("volunteer");
-            builder.HasKey(v=> v.Id);
-            builder.Property(v => v.Id)
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
                 .HasConversion(
-                id => id.Value, 
-                value => VolunteerId.Create(new Guid()) );
-
-            builder.Property(v => v.Description)
-                .IsRequired(true)
-                .HasMaxLength(Constants.MAX_MEDIUM_TEXT_LENGTH);
-
-            builder.Property(v => v.Description)
-               .IsRequired(false)
-               .HasMaxLength(Constants.PHONE_NUMBER_MAX_LENGTH);
+                id => id.Value, value => VolunteerId.Create(new Guid()) );
 
             builder.HasMany(v => v.Pets)
                 .WithOne()
