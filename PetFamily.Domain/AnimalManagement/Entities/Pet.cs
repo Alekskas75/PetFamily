@@ -6,8 +6,6 @@ using PetFamily.Domain.Shared.ValueObjects;
 
 using Address = PetFamily.Domain.AnimalManagement.ValueObject.Address;
 
-
-
 namespace PetFamily.Domain.AnimalManagement.Entities
 {
     public class Pet : Entity<PetId>, ISoftDeletable

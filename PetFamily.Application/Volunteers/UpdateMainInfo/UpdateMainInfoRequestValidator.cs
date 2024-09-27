@@ -3,12 +3,6 @@ using PetFamily.Application.Dtos;
 using PetFamily.Domain.AnimalManagement.ValueObject;
 using PetFamily.Domain.Shared.ValueObjects;
 using PetFamily.Domain.Shared;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PetFamily.Application.Validation;
 
 namespace PetFamily.Application.Volunteers.UpdateMainInfo

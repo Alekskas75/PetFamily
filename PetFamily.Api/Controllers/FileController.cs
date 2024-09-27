@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
+﻿using Microsoft.AspNetCore.Mvc;
 using PetFamily.Api.Extensions;
 using PetFamily.Application.FileProviders;
 using PetFamily.Application.Providers;
-using PetFamily.Domain.Shared;
 
 namespace PetFamily.Api.Controllers
 {

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+
 namespace PetFamily.Domain.Shared
 {
     public class ErrorList : IEnumerable<Error>
