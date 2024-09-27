@@ -27,21 +27,6 @@ namespace PetFamily.Domain.Shared
                 var label = name == null ? "" : " " + name + " ";
                 return Error.Validation("length.is.invalid", $"invalid{label}length)");
             }
-        }
-        public static class Volunteer
-        {
-            public static Error AlreadyExist()
-            {
-                return Error.Validation("record.already.exist", "record already exist");
-            }
-        }
-
-        public static class PhoneNumber
-        {
-            public static Error Validation(string? number)
-            {
-                return Error.Validation("phone.number.not.invalid", $"phone number '{number}' not invalid");
-            }
-        }
+        }          
     }
 }

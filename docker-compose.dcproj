@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>2ca7701e-5a70-4e64-b5d2-1884741c0e56</ProjectGuid>
+    <ProjectGuid>3373efef-2176-45ce-9a74-044a9d8c72ba</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>petfamily.api</DockerServiceName>
