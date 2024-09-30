@@ -1,7 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
 
-using Microsoft.Extensions.Logging;
-
 using PetFamily.Application.FileProviders;
 using PetFamily.Application.Providers;
 using PetFamily.Domain.Shared;
