@@ -1,7 +1,5 @@
 ﻿using PetFamily.Domain.Shared.ValueObjects;
 
-
-
 namespace PetFamily.Domain.AnimalManagement.ValueObject
 {
     public record PetDetails

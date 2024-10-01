@@ -5,7 +5,6 @@ using PetFamily.Domain.AnimalManagement.IDs;
 using PetFamily.Domain.Enums;
 using PetFamily.Domain.Shared.ValueObjects;
 
-
 namespace PetFamily.Domain.AnimalManagement.AggregateRoot
 {
     public sealed class Volunteer : Entity<VolunteerId>, ISoftDeletable

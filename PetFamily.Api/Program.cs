@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using PetFamily.Infrastructure.Data;
-using Serilog.Events;
 using Serilog;
 using PetFamily.Api;
 using PetFamily.Application;

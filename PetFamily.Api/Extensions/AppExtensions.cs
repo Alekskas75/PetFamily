@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
 using PetFamily.Infrastructure.Data;
 
 namespace PetFamily.Api.Extensions

@@ -6,8 +6,6 @@ using PetFamily.Domain.AnimalManagement.ValueObject;
 using PetFamily.Domain.Shared;
 using PetFamily.Domain.Shared.ValueObjects;
 
-
-
 namespace PetFamily.Application.Volunteers.Create
 {
     public class CreateVolunteerHandler
